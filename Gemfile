@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 gem 'rails', '4.0.0'
 #gem 'sqlite3'         for heroku
-gem 'pg', '~> 0.17.1'
+gem 'pg', '~> 0.17.1'  # heroku only allows postgres
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -14,6 +14,9 @@ gem 'devise'
 gem 'devise_invitable'
 gem 'figaro'
 gem 'rolify'
+gem 'paperclip'
+gem 'acts_as_follower'
+gem "acts-as-taggable-on"
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
