@@ -28,6 +28,7 @@ GroominatiProto::Application.configure do
   config.assets.debug = true  # Send email in development mode.
   config.action_mailer.perform_deliveries = true
   config.action_mailer.default_url_options = { :host => 'localhost' }
+  config.action_mailer.delivery_method = :smtp
 
   #paperclip
   Paperclip.options[:command_path] = "/usr/local/bin/"
