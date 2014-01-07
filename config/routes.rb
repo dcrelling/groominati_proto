@@ -1,7 +1,9 @@
 GroominatiProto::Application.routes.draw do
-  resources :posts
 
-  resources :user_profiles
+  namespace :api, defaults: {format: :json} do
+    resources :posts, :user_profiles
+  end
+
 
   root :to => "home#index"
   devise_for :users, :controllers => {:registrations => "registrations"}

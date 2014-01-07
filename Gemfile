@@ -9,14 +9,15 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
-gem 'cancan'
-gem 'devise'
-gem 'devise_invitable'
+gem 'cancan'        # for assigning roles to users
+gem 'devise'     # for authentication
+gem 'devise_invitable'           #for authentication
 gem 'figaro'
 gem 'rolify'
-gem 'paperclip'
-gem 'acts_as_follower'
-gem 'acts-as-taggable-on'
+gem 'paperclip'   #for attaching files to models
+gem 'acts_as_follower' #allows following of users
+gem 'acts-as-taggable-on'  # for tagging
+gem 'active_model_serializers' #for rendering models and json easily
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
