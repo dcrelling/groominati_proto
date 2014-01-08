@@ -1,8 +1,8 @@
 GroominatiProto::Application.routes.draw do
 
-  namespace :api, defaults: {format: :json} do
-    resources :posts, :user_profiles
-  end
+
+  resources :posts, defaults: {format: :json}
+  resources :user_profiles, defaults: {format: :json}
 
 
   root :to => "home#index"
