@@ -24,7 +24,8 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
+    #Refactor maybe is this the best way to associate a post with the current user?
+    @post = current_user.posts.build(post_params)
 
     respond_to do |format|
       if @post.save
@@ -69,6 +70,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:content, :user_id)
+      params.require(:post).permit(:content, :user_id, :asset)
     end
 end
