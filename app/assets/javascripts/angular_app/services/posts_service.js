@@ -1,19 +1,4 @@
-groominatiApp.factory('Posts', ['$resource', function ($resource) {
+groominatiApp.factory('Post', ['$resource', function ($resource) {
 
-    return {
-        getAllPosts: function () {
-            var Posts = $resource('/posts');
-            return Posts.query();
-        },
-
-        deletePost: function () {
-
-        },
-
-        newPost: function () {
-
-        }
-    };
-
-
+    return $resource('/posts/:postId', {postId: '@id'});
 }]);

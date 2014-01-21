@@ -1,3 +1,3 @@
-groominatiApp.controller('HomeCtrl', ['$scope', 'Posts', function($scope, Posts){
-    $scope.posts = Posts.getAllPosts();
+groominatiApp.controller('HomeCtrl', ['$scope', 'Post', function($scope, Post){
+    $scope.posts = Post.query();
 }]);
