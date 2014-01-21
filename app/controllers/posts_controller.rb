@@ -1,15 +1,20 @@
 class PostsController < ApplicationController
+  before_filter :intercept_html_requests
+  layout false
+  respond_to :json
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
   def index
     @posts = Post.all
+    render json: @posts
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    render json: @posts
   end
 
   # GET /posts/new
@@ -26,50 +31,53 @@ class PostsController < ApplicationController
   def create
     #Refactor maybe is this the best way to associate a post with the current user?
     @post = current_user.posts.build(post_params)
+    @post.tag_list = @post.extract_tags
 
-    respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @post }
+        render json: @post, status: :created
       else
-        format.html { render action: 'new' }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        render json: @post.errors, status: :unprocessable_entity
       end
-    end
   end
 
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
-    respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
-        format.json { head :no_content }
+        head :no_content
       else
-        format.html { render action: 'edit' }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        render json: @post.errors, status: :unprocessable_entity
       end
-    end
   end
 
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
     @post.destroy
-    respond_to do |format|
-      format.html { redirect_to posts_url }
-      format.json { head :no_content }
+      head :no_content
+  end
+
+  def tagged
+    if params[:tag].present?
+      @posts = Post.tagged_with(params[:tag])
+    else
+      @posts = Post.postall
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
-      params.require(:post).permit(:content, :user_id, :asset)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def post_params
+    params.require(:post).permit(:content, :user_id, :asset, :tag_list)
+  end
+
+  # if someone asks for html, redirect them to the home page, we only serve json
+  def intercept_html_requests
+    redirect_to('/') if request.format == Mime::HTML
+  end
 end

@@ -1,7 +1,7 @@
 GroominatiProto::Application.routes.draw do
 
 
-  resources :posts#, defaults: {format: :json}
+  resources :posts, defaults: {format: :json}
   resources :user_profiles, defaults: {format: :json}
 
 

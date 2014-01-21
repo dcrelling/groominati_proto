@@ -1,0 +1,1 @@
+var groominatiApp = angular.module("Groominati", ['ngResource']);

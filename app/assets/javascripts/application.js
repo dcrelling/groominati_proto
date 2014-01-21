@@ -11,6 +11,10 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
-//= require turbolinks
+//= require angular
+//= require angular-resource
+//= require ui-utils
+//= require ui-bootstrap-tpls
+//= require groominati_app.js
+//= require_tree ./angular_app
 //= require_tree .

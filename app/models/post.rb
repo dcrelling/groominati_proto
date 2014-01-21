@@ -1,6 +1,10 @@
 class Post < ActiveRecord::Base
   belongs_to :user
   acts_as_taggable
-  #attr_accessible :post, :user_id, :asset, :tag_list
+  include Twitter::Extractor
   has_attached_file :asset, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+
+  def extract_tags
+    extract_hashtags(self.content)
+  end
 end
