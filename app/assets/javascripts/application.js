@@ -13,8 +13,9 @@
 //= require jquery
 //= require angular
 //= require angular-resource
+//= require angular-route
 //= require ui-utils
 //= require ui-bootstrap-tpls
-//= require groominati_app.js
+//= require groominati_app
 //= require_tree ./angular_app
 //= require_tree .

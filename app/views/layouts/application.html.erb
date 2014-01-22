@@ -17,12 +17,7 @@
       <div id="main" role="main">
         <%= yield %>
       </div>
-      <div ng-controller="HomeCtrl">
-        <ul>
-          <li ng-repeat="post in posts">
-            {{post.id}}, {{post.content}}
-          </li>
-        </ul>
+      <div ng-view>
       </div>
       <footer>
       </footer>
