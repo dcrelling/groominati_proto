@@ -14,6 +14,7 @@
 //= require angular
 //= require angular-resource
 //= require angular-route
+//= require angular-file-upload
 //= require ui-utils
 //= require ui-bootstrap-tpls
 //= require groominati_app

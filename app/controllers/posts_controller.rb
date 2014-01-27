@@ -32,7 +32,7 @@ class PostsController < ApplicationController
   def create
     #Refactor maybe is this the best way to associate a post with the current user?
     @post = current_user.posts.build(post_params)
-    @post.tag_list = @post.extract_tags
+    #@post.tag_list = @post.extract_tags
 
       if @post.save
         render json: @post, status: :created
@@ -74,7 +74,8 @@ class PostsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
-    params.require(:post).permit(:content, :user_id, :asset, :tag_list)
+    #params.require(:post).permit(:content, :user_id, :asset, :tag_list)  //was not able to figure out how to pass all the params in post, revisit this
+    params.permit(:content, :user_id, :asset, :tag_list)
   end
 
   # if someone asks for html, redirect them to the home page, we only serve json

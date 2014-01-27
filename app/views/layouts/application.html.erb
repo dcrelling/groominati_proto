@@ -16,14 +16,20 @@
   </header>
   <div id="main" role="main">
     <%= yield %>
-  </div>
+  </div>   <!--
   <div ng-view> <!-- this is the view for the post list -->
   </div>
-  <div>         <!-- this div contains a form for uploaing posts -->
-    <form ng-submit="newPost()" ng-controller="HomeCtrl">
+  <div ng-controller="HomeCtrl">         <!-- this div contains a form for uploaing posts -->
+    <ul>
+      <li ng-repeat="post in posts">
+        {{post.id}}, {{post.content}}, {{post.asset}}
+      </li>
+    </ul>
+    <form ng-submit="newPost()" >
       <label for="post_content">Content</label>
       <input id="post_content" type="text" ng-model="post.content">
       <button type="submit">Create</button>
+      <input type="file" ng-file-select="onFileSelect($files)">
     </form>
   </div>
   <footer>
