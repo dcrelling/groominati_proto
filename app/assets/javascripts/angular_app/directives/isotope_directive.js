@@ -4,12 +4,15 @@ groominatiApp.directive('isoRepeat', function () {
         template: JST['angular_app/templates/posts_list'](),
         link: function (scope, element, attrs) {
 
-            var isoOptions = {
-                animationEngine: 'jquery',
-                itemSelector: 'div',
-                layoutMode: 'masonry',
-                sortAscending: true
-            };
+            $timeout(function () {
+                var isoOptions = {
+                    animationEngine: 'jquery',
+                    itemSelector: '.item',
+                    layoutMode: 'masonry',
+                    sortAscending: true
+                };
+                element.isotope(isoOptions);
+            });
 
             element.isotope(isoOptions);
 
