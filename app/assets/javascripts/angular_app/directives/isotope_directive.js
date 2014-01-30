@@ -1,10 +1,10 @@
-groominatiApp.directive('isoRepeat', function () {
+groominatiApp.directive('isoRepeat', function ($timeout) {
     return{
         restrict: 'A',
         template: JST['angular_app/templates/posts_list'](),
         link: function (scope, element, attrs) {
 
-            $timeout(function () {
+           $timeout(function () {
                 var isoOptions = {
                     animationEngine: 'jquery',
                     itemSelector: '.item',
@@ -12,11 +12,7 @@ groominatiApp.directive('isoRepeat', function () {
                     sortAscending: true
                 };
                 element.isotope(isoOptions);
-            });
-
-            element.isotope(isoOptions);
-
-
+           }, 250);
         }
     };
 });
