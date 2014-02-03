@@ -1,4 +1,4 @@
-groominatiApp.controller('HomeCtrl', ['$scope', 'Post', '$upload', function ($scope, Post, $upload) {
+groominatiApp.controller('PostCtrl', ['$scope', 'Post', '$upload', function ($scope, Post, $upload) {
     $scope.posts = Post.query();
 
     $scope.newPost = function () {
