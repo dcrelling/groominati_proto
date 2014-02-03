@@ -1,5 +1,12 @@
 groominatiApp.controller('PostCtrl', ['$scope', 'Post', '$upload', function ($scope, Post, $upload) {
-    $scope.posts = Post.query();
+    //$scope.posts = Post.query(); not using this now because we are pre-loading data
+
+    /*this is the function that is called on PostCtrl initialize with ng-init
+    * we are pre-loading the data from the home#index.html.erb file via json_for(@posts)
+    */
+    $scope.setPostOnInit = function(data){
+        $scope.posts = data;
+    },
 
     $scope.newPost = function () {
         //var newPost = Post.save({content: $scope.post.content, asset: "dang"});
