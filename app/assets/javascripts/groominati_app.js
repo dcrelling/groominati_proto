@@ -1,4 +1,4 @@
-var groominatiApp = angular.module("Groominati", ['ngResource', 'ngRoute', 'angularFileUpload']);
+var groominatiApp = angular.module("Groominati", ['iso.directives', 'ngResource', 'ngRoute', 'angularFileUpload']);
 
 /*
 groominatiApp.config(['$routeProvider', function($routeProvider){
