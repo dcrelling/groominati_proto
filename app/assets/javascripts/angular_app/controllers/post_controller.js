@@ -40,8 +40,6 @@ groominatiApp.controller('PostCtrl', ['$scope', 'Post', '$upload', function ($sc
                 //$scope.progress[index] = parseInt(100.0 * evt.loaded / evt.total);
                 //TODO: need to handle progress update
             });
-        //.error(...)
-        //.then(success, error, progress);
     };
 
     $scope.onFileSelect = function ($files) {
