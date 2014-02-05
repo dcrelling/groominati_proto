@@ -15,6 +15,8 @@
 //= require angular-resource
 //= require angular-route
 //= require angular-file-upload
+//= require jquery.isotope
+//= require angular-isotope
 //= require ui-utils
 //= require ui-bootstrap-tpls
 //= require groominati_app
