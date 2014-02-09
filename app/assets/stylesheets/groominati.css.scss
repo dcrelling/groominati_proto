@@ -1,2 +1,15 @@
 //this is the master .css file use this file to add styles that you want to apply globally
-body { padding-top: 120px; }
+body {
+  padding-top: 120px;
+}
+
+ul {
+  list-style: none;
+}
+
+.corner-stamp{
+  width: 175px;
+  height: 175px;
+  background: red;
+  color: white;
+}
