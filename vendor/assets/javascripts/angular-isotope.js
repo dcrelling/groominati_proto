@@ -56,6 +56,7 @@ angular.module("iso.controllers", ["iso.config", "iso.services"]).controller("an
         //updated to use teh imageLoader method so that all images are loaded before isotope kicks in
         //isotopeContainer.isotope(optionsStore.retrieve());
         //return postInitialized = true;
+
           isotopeContainer.imagesLoaded(function(){
               isotopeContainer.isotope(optionsStore.retrieve());
               return postInitialized = true;

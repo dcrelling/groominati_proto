@@ -1,29 +1,41 @@
 <div ng-controller="PostCtrl" ng-init="setPostOnInit(<%= json_for(@posts) %>)">         <!-- this div contains a form for uploaing posts -->
+  <div id="container">
+    <div class="row"><!-- row -->
+      <div class="col-lg-12"><!-- col -->
+        <div id="iso-container" class="iso-container" isotope-container iso-options-subscribe="my-iso-opts" iso-method-subscribe="my-iso-method" iso-options="{layoutMode:'masonry', masonry:{columnWidth: 210, cornerStampSelector: '.corner-stamp'}, animationEngine : 'jquery'}">
+          <div isotope-item>
+            <img class="corner-stamp">
+          </div>
 
-  <div id="isotopeContainer" class="iso-container" isotope-container iso-options-subscribe="my-iso-opts" iso-method-subscribe="my-iso-method" iso-options="{layoutMode:'masonry',masonry: {columnWidth: 100, cornerStampSelector: '.corner-stamp'}, animationEngine : 'jquery'}">
-    <div isotope-item>
-      <img width="200" height="200" class="corner-stamp">
-    </div>
-    <div ng-repeat="post in posts" isotope-item>
-      <img ng-src="{{post.asset}}" width="100" height="100" class="iso-image">
-    </div>
+          <div ng-repeat="post in posts" isotope-item>
+            <img ng-src="{{post.asset}}" class="iso-image img-responsive">
+            <!--<img src="holder.js/150x300"    -->
+          </div>
+        </div>  <!-- end iso-container  -->
+      </div>  <!-- end col -->
+    </div>   <!-- end row -->
   </div>
+
+
 
 
   <form ng-submit="newPost()" isotope-item>
-    <textarea id="post_content" rows="2" cols="15" ng-model="post.content"></textarea>
-    <button type="submit">Create</button>
-    <input type="file" ng-file-select="onFileSelect($files)">
+   <textarea id="post_content" rows="2" cols="15" ng-model="post.content"></textarea>
+   <button type="submit">Create</button>
+   <input type="file" ng-file-select="onFileSelect($files)">
   </form>
+  <!--
 
+<div class="btn-toolbar" role="toolbar">
+<div class="btn-group-sm">
+  <button type="button" ng-file-select="onFileSelect($files)" class="btn btn-default">
+    <span class="glyphicon glyphicon-camera"></span>
+  </button>
+  <button type="submit" class="btn btn-default">Submit</button>
+</div>
+</div>
 
-  <div class="btn-toolbar" role="toolbar">
-    <div class="btn-group-sm">
-      <button type="button" ng-file-select="onFileSelect($files)" class="btn btn-default">
-        <span class="glyphicon glyphicon-camera"></span>
-      </button>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </div>
-  </div>
+</div>
+    -->
 
 </div>

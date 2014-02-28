@@ -8,18 +8,21 @@ ul {
 }
 
 .corner-stamp {
-  padding: 5px;
   float: left;
+  margin: 5px;
   background: #888;
+  width: 200px;
+  height: 200px;
 }
 
 .iso-image {
   float: left;
-  padding: 5px;
+  margin: 5px;
+  background: #ffffff;
+  width: 200px;
 }
 
 .iso-container {
-  border: 2px solid;
 }
 
 /* Start: Recommended Isotope styles */
