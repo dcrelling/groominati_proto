@@ -1,4 +1,4 @@
-groominatiApp.controller('PostCtrl', ['$scope', 'Post', '$upload', function ($scope, Post, $upload) {
+groominatiApp.controller('PostCtrl', ['$scope', 'Post', '$upload', '$modal', function ($scope, Post, $upload, $modal) {
     //$scope.posts = Post.query(); not using this now because we are pre-loading data
 
     /*this is the function that is called on PostCtrl initialize with ng-init
@@ -42,6 +42,13 @@ groominatiApp.controller('PostCtrl', ['$scope', 'Post', '$upload', function ($sc
             });
     };
 
+    $scope.openNewPostModalForm = function(){
+        var modalInstance = $modal.open({
+            template: JST['angular_app/templates/new_post_modal_form'](),
+            controller: 'ModalInstanceCtrl'
+        });
+    };
+
     $scope.onFileSelect = function ($files) {
         //$files: an array of files selected, each file has name, size, and type.
         //TODO: we are uploading only one file so don't need this for loop
@@ -51,3 +58,4 @@ groominatiApp.controller('PostCtrl', ['$scope', 'Post', '$upload', function ($sc
         }
     };
 }]);
+

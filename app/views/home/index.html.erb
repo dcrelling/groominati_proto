@@ -4,12 +4,11 @@
       <div class="col-lg-12"><!-- col -->
         <div id="iso-container" class="iso-container" isotope-container iso-options-subscribe="my-iso-opts" iso-method-subscribe="my-iso-method" iso-options="{layoutMode:'masonry', masonry:{columnWidth: 210, cornerStampSelector: '.corner-stamp'}, animationEngine : 'jquery'}">
           <div isotope-item>
-            <img class="corner-stamp">
+            <img class="corner-stamp" ng-click="openNewPostModalForm()">
           </div>
 
           <div ng-repeat="post in posts" isotope-item>
             <img ng-src="{{post.asset}}" class="iso-image img-responsive">
-            <!--<img src="holder.js/150x300"    -->
           </div>
         </div>  <!-- end iso-container  -->
       </div>  <!-- end col -->
