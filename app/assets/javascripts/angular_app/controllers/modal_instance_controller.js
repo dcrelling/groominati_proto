@@ -2,6 +2,7 @@
  * Created by dcrelling on 3/6/14.
  */
 
+
 groominatiApp.controller ("ModalInstanceCtrl", ['$scope', '$modalInstance', function ($scope, $modalInstance) {
 
     $scope.ok = function () {

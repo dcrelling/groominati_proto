@@ -4,6 +4,7 @@ groominatiApp.controller('PostCtrl', ['$scope', 'Post', '$upload', '$modal', fun
     /*this is the function that is called on PostCtrl initialize with ng-init
     * we are pre-loading the data from the home#index.html.erb file via json_for(@posts)
     */
+
     $scope.setPostOnInit = function(data){
         $scope.posts = data;
     },
@@ -40,22 +41,24 @@ groominatiApp.controller('PostCtrl', ['$scope', 'Post', '$upload', '$modal', fun
                 //$scope.progress[index] = parseInt(100.0 * evt.loaded / evt.total);
                 //TODO: need to handle progress update
             });
-    };
+    },
+
 
     $scope.openNewPostModalForm = function(){
         var modalInstance = $modal.open({
             template: JST['angular_app/templates/new_post_modal_form'](),
             controller: 'ModalInstanceCtrl'
         });
-    };
+    },
 
     $scope.onFileSelect = function ($files) {
         //$files: an array of files selected, each file has name, size, and type.
         //TODO: we are uploading only one file so don't need this for loop
+        $scope.post = {};
         for (var i = 0; i < $files.length; i++) {
             var asset = $files[i];
             $scope.post.asset = asset;
         }
-    };
+    }
 }]);
 
