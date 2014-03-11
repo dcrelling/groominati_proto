@@ -3,7 +3,7 @@
  */
 
 
-groominatiApp.controller ("ModalInstanceCtrl", ['$scope', '$modalInstance', '$upload', 'posts', function ($scope, $modalInstance, $upload, posts) {
+groominatiApp.controller ("NewPostModalCtrl", ['$scope', '$modalInstance', '$upload', 'posts', function ($scope, $modalInstance, $upload, posts) {
 
     $scope.posts = posts;
 
