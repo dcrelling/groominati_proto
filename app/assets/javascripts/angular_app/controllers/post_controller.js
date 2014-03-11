@@ -47,7 +47,10 @@ groominatiApp.controller('PostCtrl', ['$scope', 'Post', '$upload', '$modal', fun
     $scope.openNewPostModalForm = function(){
         var modalInstance = $modal.open({
             template: JST['angular_app/templates/new_post_modal_form'](),
-            controller: 'ModalInstanceCtrl'
+            controller: 'ModalInstanceCtrl',
+            resolve: {posts: function(){
+                return $scope.posts;
+            }}
         });
     },
 
