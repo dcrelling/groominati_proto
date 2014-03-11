@@ -32,7 +32,7 @@ class PostsController < ApplicationController
   def create
     #Refactor maybe is this the best way to associate a post with the current user?
     @post = current_user.posts.build(post_params)
-    #@post.tag_list = @post.extract_tags
+    @post.tag_list = @post.extract_tags
 
       if @post.save
         render json: @post, status: :created

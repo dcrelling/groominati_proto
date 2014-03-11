@@ -20,6 +20,7 @@ gem 'acts-as-taggable-on'  # for tagging
 gem 'active_model_serializers' #for rendering models and json easily
 gem 'twitter-text' #for extracting hash tags and user names
 gem 'ejs'
+gem 'aws-sdk'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]

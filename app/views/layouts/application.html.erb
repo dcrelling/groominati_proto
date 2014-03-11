@@ -17,6 +17,7 @@
   </header>
   -->
 
+  <!-- nav bar -->
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="NavBarCtrl">
     <div class="container">
       <div class="navbar-header">
@@ -42,6 +43,25 @@
     </div>
     <!-- /.container -->
   </nav>
+  <!-- end navbar -->
+
+  <!-- filter section   -->
+  <div ng-controller="FilterCtrl">
+    <div class="well well-sm">
+      <div ng-click="isFilterCollapsed = !isFilterCollapsed" class="pull-right">
+        <span class="glyphicon glyphicon-chevron-down"></span>
+      </div>
+      <form role="search">
+        <div class="form-group">
+          <input type="search" placeholder="Search">
+        </div>
+      </form>
+    </div>
+    <div collapse="isFilterCollapsed">
+      <div class="well well-lg">Some content</div>
+    </div>
+  </div>
+  <!-- end filter section -->
 
   <!-- below are are loading the rails home controller and home index which preloads the template and the @posts json data -->
   <div id="main" role="main">

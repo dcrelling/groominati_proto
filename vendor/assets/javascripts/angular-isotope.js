@@ -53,8 +53,14 @@ angular.module("iso.controllers", ["iso.config", "iso.services"]).controller("an
       initEventHandler($scope.$on, isoInit.isoMethodEvent, methodHandler);
       $scope.isoMode = isoInit.isoMode || "addItems";
       return $timeout(function() {
-        isotopeContainer.isotope(optionsStore.retrieve());
-        return postInitialized = true;
+        //updated to use teh imageLoader method so that all images are loaded before isotope kicks in
+        //isotopeContainer.isotope(optionsStore.retrieve());
+        //return postInitialized = true;
+
+          isotopeContainer.imagesLoaded(function(){
+              isotopeContainer.isotope(optionsStore.retrieve());
+              return postInitialized = true;
+          });
       });
     };
     $scope.setIsoElement = function($element) {

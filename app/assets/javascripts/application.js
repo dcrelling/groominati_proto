@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require holder
 //= require angular
 //= require angular-resource
 //= require angular-route
