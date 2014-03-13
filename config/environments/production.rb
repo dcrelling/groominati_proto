@@ -77,4 +77,24 @@ GroominatiProto::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  #config action mailer to send email
+  config.action_mailer.default_url_options = {:host => 'http://evening-ravine-7085.herokuapp.com'}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :address => "127.0.0.1",
+      :port    => 25,
+      :domain  => 'http://evening-ravine-7085.herokuapp.com'
+  }
+
+  #paperclip config to use AWS S3
+  config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_credentials => {
+          :bucket => ENV['S3_BUCKET_NAME'],
+          :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+          :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+      }
+  }
+
 end
