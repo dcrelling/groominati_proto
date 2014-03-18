@@ -19,11 +19,11 @@ groominatiApp.directive('imageSlider', function () {
             };
 
             scope.$watch('currentIndex', function () {
-                scope.images.forEach(function (image) {
-                    image.visible = false; // make every image invisible
+                scope.posts.forEach(function (post) {
+                    post.visible = false; // make every image invisible
                 });
 
-                scope.images[scope.currentIndex].visible = true; // make the current image visible
+                scope.posts[scope.currentIndex].visible = true; // make the current image visible
             });
 
 

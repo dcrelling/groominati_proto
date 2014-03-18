@@ -1,6 +1,6 @@
 <div class="slider">
-    <div class="slide" ng-repeate="post in posts" ng-show="post.visible">
-        <img ng-src="{{post.asset}}"/>
+    <div class="slide" ng-repeat="post in posts" ng-show="post.visible">
+        <img ng-src="{{post.asset}}">
     </div>
     <div class="arrows">
         <a href="#" ng-click="prev()">
