@@ -2,7 +2,7 @@
   <div id="container">
     <div class="row"><!-- row -->
       <div class="col-lg-12"><!-- col -->
-        <div id="iso-container" class="iso-container" isotope-container iso-options-subscribe="my-iso-opts" iso-method-subscribe="my-iso-method" iso-options="{layoutMode:'masonry', masonry:{columnWidth: 210, cornerStampSelector: '.corner-stamp'}, animationEngine : 'jquery'}">
+        <div id="iso-container" isotope-container iso-options-subscribe="my-iso-opts" iso-method-subscribe="my-iso-method" iso-options="{layoutMode:'masonry', masonry:{columnWidth: 210, cornerStampSelector: '.corner-stamp'}, animationEngine : 'jquery'}">
           <div isotope-item>
             <img class="corner-stamp" ng-click="openNewPostModalForm()">
           </div>
@@ -17,4 +17,7 @@
     </div>
     <!-- end row -->
   </div>
+
+  <image-slider posts="posts"/>
+
 </div>

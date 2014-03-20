@@ -15,6 +15,7 @@
 //= require angular
 //= require angular-resource
 //= require angular-route
+//= require angular-animate
 //= require angular-file-upload
 //= require jquery.isotope
 //= require angular-isotope
