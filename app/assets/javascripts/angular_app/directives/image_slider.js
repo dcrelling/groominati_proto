@@ -4,7 +4,8 @@ groominatiApp.directive('imageSlider', function () {
         restrict: 'AE',
         replace: 'true',
         scope: {
-            posts: '='
+            posts: '=',
+            clickIndex: '='
         },
         link: function (scope, elem, attrs) {
 
@@ -24,6 +25,10 @@ groominatiApp.directive('imageSlider', function () {
                 });
 
                 scope.posts[scope.currentIndex].visible = true; // make the current image visible
+            });
+
+            scope.$watch('clickIndex', function(newValue) {
+                scope.currentIndex = newValue;
             });
 
 

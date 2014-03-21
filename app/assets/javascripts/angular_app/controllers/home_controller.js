@@ -7,6 +7,7 @@ groominatiApp.controller('HomeCtrl', ['$scope', 'Post', '$upload', '$modal', fun
 
     $scope.setPostsOnInit = function(data){
         $scope.posts = data;
+        $scope.postsIndex = 0;
     },
 
 
@@ -18,6 +19,10 @@ groominatiApp.controller('HomeCtrl', ['$scope', 'Post', '$upload', '$modal', fun
                 return $scope.posts;
             }}
         });
+    },
+
+    $scope.setClickIndex = function(index){
+        $scope.clickIndex = index;
     }
 
 }]);
