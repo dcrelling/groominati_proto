@@ -6,8 +6,10 @@ groominatiApp.directive('colorBox', ['$rootScope', function ($rootScope) {
     return{
         restrict: 'A',
         link: function (scope, elem, attrs) {
-           //elem.colorbox(attrs.colorbox);
-           angular.element('a.group1').colorbox({ opacity:0.5 , rel:'group1' });
+
+           scope.openColorBox = function(){
+               angular.element('a.gallery').colorbox({ opacity:0.9 , rel:'group1'});
+           };
         }
     };
 
