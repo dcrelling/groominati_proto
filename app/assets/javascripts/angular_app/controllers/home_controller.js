@@ -19,10 +19,6 @@ groominatiApp.controller('HomeCtrl', ['$scope', 'Post', '$upload', '$modal', fun
                 return $scope.posts;
             }}
         });
-    },
-
-    $scope.setClickIndex = function(index){
-        $scope.clickIndex = index;
     }
 
 }]);

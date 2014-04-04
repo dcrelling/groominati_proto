@@ -21,6 +21,7 @@
 //= require angular-isotope
 //= require ui-utils
 //= require ui-bootstrap-tpls
+//= require jquery.colorbox
 //= require groominati_app
 //= require_tree ./angular_app
 //= require_tree .
