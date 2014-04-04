@@ -3,15 +3,17 @@
     <div class="row"><!-- row -->
       <div class="col-lg-12"><!-- col -->
         <div id="iso-container" isotope-container iso-options-subscribe="my-iso-opts" iso-method-subscribe="my-iso-method" iso-options="{layoutMode:'masonry', masonry:{columnWidth: 210, cornerStampSelector: '.corner-stamp'}, animationEngine : 'jquery'}">
-          <div isotope-item>
+          <li style="list-style-type: none;" isotope-item>
             <img class="corner-stamp" ng-click="openNewPostModalForm()">
-          </div>
+          </li>
 
-          <div ng-repeat="post in posts" isotope-item>
-            <a color-box="{transition:'fade'}" ng-href="{{post.original}}" ng-class="group1">
-            <img ng-src="{{post.asset}}" class="iso-image img-responsive">
-            </a>
-          </div>
+
+            <li style="list-style-type: none;" ng-repeat="post in posts" isotope-item>
+              <a color-box ng-href="{{post.original}}" class="group1">
+                <img ng-src="{{post.asset}}" class="iso-image img-responsive">
+              </a>
+            </li>
+
         </div>
         <!-- end iso-container  -->
       </div>
@@ -19,7 +21,6 @@
     </div>
     <!-- end row -->
   </div>
-
 
 
 </div>
