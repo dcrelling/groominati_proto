@@ -6,11 +6,11 @@
 groominatiApp.controller ("NewPostModalCtrl", ['$scope', '$modalInstance', '$upload', 'posts', function ($scope, $modalInstance, $upload, posts) {
 
     $scope.posts = posts;
+    $scope.post = {};
 
     $scope.onFileSelect = function ($files) {
         //$files: an array of files selected, each file has name, size, and type.
         //TODO: we are uploading only one file so don't need this for loop
-        $scope.post = {};
         for (var i = 0; i < $files.length; i++) {
             var asset = $files[i];
             $scope.post.asset = asset;
@@ -26,7 +26,7 @@ groominatiApp.controller ("NewPostModalCtrl", ['$scope', '$modalInstance', '$upl
             url: '/posts', //url of the REST end point
             method: 'POST',
             // headers: {'headerKey': 'headerValue'}, withCredential: true,
-            data: {content: $scope.post.content},
+            data: {content: $scope.post.content, tag_list: $scope.post.tags},
 
             // file: $files, //upload multiple files, this feature only works in HTML5 FromData browsers
             /* set file formData name for 'Content-Desposition' header. Default: 'file' */
