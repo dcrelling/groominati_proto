@@ -8,7 +8,7 @@
             <img class="corner-stamp" ng-click="openNewPostModalForm()">
           </li>
 
-          <li style="list-style-type: none;" ng-repeat="post in posts" isotope-item>
+          <li style="list-style-type: none;" ng-repeat="post in posts" isotope-item class="{{post.tag_list | taglist}}">
             <a color-box ng-href="{{post.original}}" class="gallery" ng-click="openColorBox()">
               <img ng-src="{{post.asset}}" class="iso-image img-responsive">
             </a>
