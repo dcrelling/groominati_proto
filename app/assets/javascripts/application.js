@@ -22,6 +22,7 @@
 //= require ui-utils
 //= require ui-bootstrap-tpls
 //= require jquery.colorbox
+//= require ng-tags-input
 //= require groominati_app
 //= require_tree ./angular_app
 //= require_tree .

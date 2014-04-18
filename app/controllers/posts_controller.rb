@@ -31,31 +31,32 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     #Refactor maybe is this the best way to associate a post with the current user?
-    @post = current_user.posts.build(post_params)
-    @post.tag_list = @post.extract_tags
+    @post = current_user.posts.build(post_params.slice(:content, :user_id, :asset))
+    #@post.tag_list = @post.extract_tags
+    @post.build_tags(params[:tag_list])
 
-      if @post.save
-        render json: @post, status: :created
-      else
-        render json: @post.errors, status: :unprocessable_entity
-      end
+    if @post.save
+      render json: @post, status: :created
+    else
+      render json: @post.errors, status: :unprocessable_entity
+    end
   end
 
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
-      if @post.update(post_params)
-        head :no_content
-      else
-        render json: @post.errors, status: :unprocessable_entity
-      end
+    if @post.update(post_params)
+      head :no_content
+    else
+      render json: @post.errors, status: :unprocessable_entity
+    end
   end
 
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
     @post.destroy
-      head :no_content
+    head :no_content
   end
 
   def tagged

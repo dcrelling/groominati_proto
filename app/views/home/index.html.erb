@@ -1,26 +1,49 @@
 <div ng-controller="HomeCtrl" ng-init="setPostsOnInit(<%= json_for(@posts) %>)">         <!-- this div contains a form for uploaing posts -->
   <div id="container">
+
+    <div class="row">    <!--begining row -->
+      <div class="col-lg-12">       <!--begining colum -->
+        <!-- filter section   -->
+        <div ng-controller="FilterCtrl">
+          <div class="well well-sm">
+            <div ng-click="isFilterCollapsed = !isFilterCollapsed" class="pull-right">
+              <span class="glyphicon glyphicon-chevron-down"></span>
+            </div>
+            <form role="search">
+              <div class="form-group">
+                <input type="search" placeholder="Search">
+              </div>
+            </form>
+          </div>
+          <div collapse="isFilterCollapsed">
+            <div class="well well-lg" opt-kind ok-key="filter" ok-publish="my-iso-opts">
+              <tags-input ng-model="filterTags" on-tag-added="tagAdded($tag)" on-tag-removed="tagRemoved($tag)"></tags-input>
+            </div>
+          </div>
+        </div>
+        <!-- end filter section -->
+      </div>   <!-- end column -->
+    </div>   <!-- end row -->
+
     <div class="row"><!-- row -->
       <div class="col-lg-12"><!-- col -->
         <div id="iso-container" isotope-container iso-options-subscribe="my-iso-opts" iso-method-subscribe="my-iso-method" iso-options="{layoutMode:'masonry', masonry:{columnWidth: 210, cornerStampSelector: '.corner-stamp'}, animationEngine : 'jquery'}">
-
           <li style="list-style-type: none;" isotope-item>
             <img class="corner-stamp" ng-click="openNewPostModalForm()">
           </li>
-
-          <li style="list-style-type: none;" ng-repeat="post in posts" isotope-item>
+          <li style="list-style-type: none;" ng-repeat="post in posts" isotope-item class="{{post.tag_list | taglist}}">
             <a color-box ng-href="{{post.original}}" class="gallery" ng-click="openColorBox()">
               <img ng-src="{{post.asset}}" class="iso-image img-responsive">
             </a>
           </li>
-
         </div>
         <!-- end iso-container  -->
       </div>
       <!-- end col -->
     </div>
     <!-- end row -->
-  </div>
+
+  </div>   <!-- end container -->
 
 
 </div>
