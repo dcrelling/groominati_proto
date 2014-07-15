@@ -11,12 +11,14 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.flexslider
 //= require holder
 //= require angular
 //= require angular-resource
 //= require angular-route
 //= require angular-animate
 //= require angular-file-upload
+//= require angular-flexslider
 //= require jquery.isotope
 //= require angular-isotope
 //= require ui-utils
