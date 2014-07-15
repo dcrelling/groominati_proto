@@ -40,7 +40,7 @@
           </li>
           <li style="list-style-type: none;" ng-repeat="post in posts" isotope-item class="{{post.tag_list | taglist}}">
             <!-- <a color-box ng-href="{{post.original}}" class="gallery" ng-click="openColorBox()">  -->
-              <img ng-src="{{post.asset}}" class="iso-image img-responsive" ng-click="setClickIndex($index)">
+              <img ng-src="{{post.asset}}" class="iso-image img-responsive" ng-click="openImageSliderModalForm($index)">
            <!--  </a>               -->
           </li>
         </div>
@@ -54,6 +54,7 @@
 
   <!-- image slider modal directive below -->
 
+  <!--
   <image-slider show='modalShown' width='50%' height='50%' posts="posts" click-index="clickIndex">
     <div class="slider">
       <div class="slide" ng-repeat="post in posts" ng-show="post.visible">
@@ -61,6 +62,7 @@
       </div>
     </div>
   </image-slider>
+  -->
 
   <!-- end image slider directive -->
 
