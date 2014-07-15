@@ -33,7 +33,7 @@
           </li>
           <li style="list-style-type: none;" ng-repeat="post in posts" isotope-item class="{{post.tag_list | taglist}}">
             <a color-box ng-href="{{post.original}}" class="gallery" ng-click="openColorBox()">
-              <img ng-src="{{post.asset}}" class="iso-image img-responsive">
+              <img ng-src="{{post.asset}}" class="iso-image img-responsive" ng-click="setImageClickIndex($index)">
             </a>
           </li>
         </div>

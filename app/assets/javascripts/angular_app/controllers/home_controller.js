@@ -4,6 +4,8 @@ groominatiApp.controller('HomeCtrl', ['$scope', 'Post', '$upload', '$modal', fun
     /*this is the function that is called on PostCtrl initialize with ng-init
     * we are pre-loading the data from the home#index.html.erb file via json_for(@posts)
     */
+    $scope.imageModalShown = false;
+    $scope.imageClickIndex = 0;
 
     $scope.setPostsOnInit = function(data){
         $scope.posts = data;
@@ -19,6 +21,11 @@ groominatiApp.controller('HomeCtrl', ['$scope', 'Post', '$upload', '$modal', fun
                 return $scope.posts;
             }}
         });
+    },
+
+    $scope.setImageClickIndex = function(index){
+        $scope.imageClickIndex = index;
+        $scope.imageModalShown = !$scope.imageModalShown;
     }
 
 }]);
