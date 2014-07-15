@@ -32,9 +32,9 @@
             <img class="corner-stamp" ng-click="openNewPostModalForm()">
           </li>
           <li style="list-style-type: none;" ng-repeat="post in posts" isotope-item class="{{post.tag_list | taglist}}">
-            <a color-box ng-href="{{post.original}}" class="gallery" ng-click="openColorBox()">
+            <!-- <a color-box ng-href="{{post.original}}" class="gallery" ng-click="openColorBox()">  -->
               <img ng-src="{{post.asset}}" class="iso-image img-responsive" ng-click="setImageClickIndex($index)">
-            </a>
+           <!--  </a>               -->
           </li>
         </div>
         <!-- end iso-container  -->
@@ -44,5 +44,17 @@
     <!-- end row -->
 
   </div>   <!-- end container -->
+
+  <!-- image slider modal directive below -->
+
+  <image-slider show='imageModalShown' width='50%' height='50%' posts="posts" image-click-index="imageClickIndex">
+    <div class="slider">
+      <div class="slide" ng-repeat="post in posts" ng-show="post.visible">
+        <img ng-src="{{post.asset}}">
+      </div>
+    </div>
+  </image-slider>
+
+  <!-- end image slider directive -->
 
 </div>
