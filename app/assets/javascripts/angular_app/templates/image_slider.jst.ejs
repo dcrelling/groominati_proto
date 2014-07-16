@@ -18,12 +18,17 @@
 </div>
 -->
 
+<!--
+
 <div class="slider">
     <div class="slide" ng-repeat="post in posts" ng-show="post.visible">
         <img ng-src="{{post.asset}}">
     </div>
 </div>
 
+-->
+
+<!--
 <div class='ng-modal-dialog' ng-style='dialogStyle'>
     <div class='ng-modal-close' ng-click='hideModal()'>X</div>
     <div class='ng-modal-dialog-content' ng-transclude> </div>
@@ -36,3 +41,16 @@
         </a>
     </div>
 </div>
+
+
+-->
+<div class='ng-modal'>
+        <div class='ng-modal-dialog-content' ng-transclude></div>
+        <ul rn-carousel rn-carousel-control rn-carousel-index="index" class="image">
+            <li ng-repeat="post in posts">
+                <img ng-src="{{post.asset}}">
+            </li>
+        </ul>
+    </div>
+</div>
+

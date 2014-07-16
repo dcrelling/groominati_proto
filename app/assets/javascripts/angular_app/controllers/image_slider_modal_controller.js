@@ -3,7 +3,7 @@ groominatiApp.controller ("ImageSliderModalCtrl", ['$scope', '$modalInstance', '
     $scope.posts = posts;
     $scope.index = index;
 
-
+    /*
     $scope.next = function () {
         $scope.index < $scope.posts.length - 1 ? $scope.index++ : $scope.index = 0;
     };
@@ -27,4 +27,5 @@ groominatiApp.controller ("ImageSliderModalCtrl", ['$scope', '$modalInstance', '
 
         $scope.posts[$scope.index].visible = true; // make the current image visible
     })
+    */
 }]);

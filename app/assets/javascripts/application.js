@@ -19,6 +19,8 @@
 //= require angular-animate
 //= require angular-file-upload
 //= require angular-flexslider
+//= require angular-touch
+//= require angular-carousel
 //= require jquery.isotope
 //= require angular-isotope
 //= require ui-utils
