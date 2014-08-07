@@ -25,6 +25,7 @@ groominatiApp.controller('HomeCtrl', ['$scope', 'Post', '$upload', '$modal', fun
             var modalInstance = $modal.open({
                 template: JST['angular_app/templates/image_slider'](),
                 controller: 'ImageSliderModalCtrl',
+                size: 'sm',
                 resolve: {posts: function () {
                     return $scope.posts;
                 },
